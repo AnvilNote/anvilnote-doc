@@ -1,0 +1,17 @@
+/* Keep the site strictly black and white / grayscale — Material's
+   admonition and code-highlight defaults introduce color otherwise. */
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-color: var(--md-default-fg-color--light);
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background-color: var(--md-default-fg-color--lightest);
+}
+
+.md-typeset .admonition-title::before,
+.md-typeset summary::before {
+  background-color: var(--md-default-fg-color) !important;
+}

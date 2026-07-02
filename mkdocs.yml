@@ -1,0 +1,94 @@
+site_name: AnvilNote Docs
+site_description: Documentation for AnvilNote, an offline-first writing and note-taking app.
+site_url: https://anvilnote.github.io/anvilnote-doc/
+repo_url: https://github.com/AnvilNote/anvilnote
+repo_name: AnvilNote/anvilnote
+
+docs_dir: docs
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: black
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: white
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.highlight
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Features: features.md
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: suffix
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: zh-TW
+          name: 繁體中文
+          build: true
+          nav_translations:
+            Home: 首頁
+            Getting Started: 開始使用
+            Features: 功能特色
+        - locale: ja
+          name: 日本語
+          build: true
+          nav_translations:
+            Home: ホーム
+            Getting Started: はじめに
+            Features: 機能
+        - locale: ko
+          name: 한국어
+          build: true
+          nav_translations:
+            Home: 홈
+            Getting Started: 시작하기
+            Features: 기능
+        - locale: th
+          name: ไทย
+          build: true
+          nav_translations:
+            Home: หน้าแรก
+            Getting Started: เริ่มต้นใช้งาน
+            Features: ฟีเจอร์
+        - locale: ru
+          name: Русский
+          build: true
+          nav_translations:
+            Home: Главная
+            Getting Started: Начало работы
+            Features: Возможности
