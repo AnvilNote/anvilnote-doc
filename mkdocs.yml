@@ -12,14 +12,14 @@ theme:
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: black
-      accent: black
+      # Material has no black/white accent token — true monochrome accent
+      # colors are forced in docs/stylesheets/extra.css instead.
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
-      accent: white
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode

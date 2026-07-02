@@ -2,7 +2,7 @@
 
 AnvilNote는 장문의 노트, 강의 자료, 보고서, 학술 문서를 위한 오프라인 우선 작성 및 노트 앱입니다. Notion과 유사한 작성 경험을 제공하면서도, 구조화된 문서 내보내기, 템플릿, 폰트, 수식, 코드 블록, PDF 생성에 더 중점을 둡니다.
 
-![AnvilNote 에디터](assets/screenshots/ko.png)
+![AnvilNote 랜딩 페이지](assets/screenshots/ko-hero.png)
 
 ## AnvilNote를 선택하는 이유
 
@@ -12,6 +12,8 @@ AnvilNote는 장문의 노트, 강의 자료, 보고서, 학술 문서를 위한
 - **수식, 코드 블록, 템플릿, PDF 내보내기**는 핵심 기능입니다.
 - **Typst 기반 렌더링**으로 빠르고 고품질의 PDF 출력을 제공합니다.
 - **데스크톱 앱에는 필요한 도구가 번들로 포함.** Node.js나 Typst를 별도로 설치할 필요가 없습니다.
+
+![AnvilNote 에디터](assets/screenshots/ko-demo.png)
 
 ## 시작하기
 

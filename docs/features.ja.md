@@ -1,6 +1,6 @@
 # 機能
 
-![AnvilNote エディタ](assets/screenshots/ja.png)
+![AnvilNote エディタ](assets/screenshots/ja-demo.png)
 
 ## 執筆
 
@@ -12,6 +12,8 @@
 ## テンプレート
 
 白紙から始める代わりに、レポート・講義ノート・学術記事のテンプレートから始められます。テンプレートはエクスポートと同じ Typst のレンダリングパイプラインを使用しているため、プレビューは最終的な PDF と一致します。
+
+![テンプレートギャラリー](assets/screenshots/ja-showcase.png)
 
 ## エクスポート
 

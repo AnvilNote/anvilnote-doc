@@ -2,7 +2,7 @@
 
 AnvilNote is an offline-first writing and note-taking app for long-form notes, lecture handouts, reports, and academic documents. It provides a Notion-like writing experience, but focuses more on structured document export, templates, fonts, formulas, code blocks, and PDF generation.
 
-![AnvilNote editor](assets/screenshots/en.png)
+![AnvilNote landing page](assets/screenshots/en-hero.png)
 
 ## Why AnvilNote
 
@@ -12,6 +12,8 @@ AnvilNote is an offline-first writing and note-taking app for long-form notes, l
 - **Formulas, code blocks, templates, and PDF export** are core features.
 - **Typst-based rendering** for fast, high-quality PDF output.
 - **The desktop app bundles required tooling.** No separate Node.js or Typst install needed.
+
+![The AnvilNote editor](assets/screenshots/en-demo.png)
 
 ## Get started
 

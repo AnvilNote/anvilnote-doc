@@ -1,6 +1,6 @@
 # Features
 
-![AnvilNote editor](assets/screenshots/en.png)
+![The AnvilNote editor](assets/screenshots/en-demo.png)
 
 ## Writing
 
@@ -12,6 +12,8 @@
 ## Templates
 
 Start from a template for reports, lecture notes, or academic articles instead of a blank page. Templates are rendered through the same Typst pipeline used for export, so the preview matches the final PDF.
+
+![Template gallery](assets/screenshots/en-showcase.png)
 
 ## Export
 

@@ -1,6 +1,6 @@
 # 功能特色
 
-![AnvilNote 編輯器](assets/screenshots/zh-TW.png)
+![AnvilNote 編輯器](assets/screenshots/zh-TW-demo.png)
 
 ## 寫作
 
@@ -12,6 +12,8 @@
 ## 範本
 
 從報告、講義或學術文章的範本開始，不必從空白頁寫起。範本透過與輸出相同的 Typst 排版流程渲染，預覽畫面會與最終 PDF 一致。
+
+![範本圖庫](assets/screenshots/zh-TW-showcase.png)
 
 ## 輸出
 

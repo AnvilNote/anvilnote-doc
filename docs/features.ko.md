@@ -1,6 +1,6 @@
 # 기능
 
-![AnvilNote 에디터](assets/screenshots/ko.png)
+![AnvilNote 에디터](assets/screenshots/ko-demo.png)
 
 ## 작성
 
@@ -12,6 +12,8 @@
 ## 템플릿
 
 빈 페이지 대신 보고서, 강의 노트, 학술 아티클용 템플릿에서 시작할 수 있습니다. 템플릿은 내보내기와 동일한 Typst 렌더링 파이프라인을 사용하므로, 미리보기가 최종 PDF와 일치합니다.
+
+![템플릿 갤러리](assets/screenshots/ko-showcase.png)
 
 ## 내보내기
 
