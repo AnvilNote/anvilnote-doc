@@ -5,6 +5,7 @@ import type { AppLocale } from "@/lib/i18n/routing";
 import { HeroParticles } from "@/components/landing/hero-particles";
 import { ParallaxLayer } from "@/components/landing/parallax-layer";
 import { ScrollDownLink } from "@/components/landing/scroll-down-link";
+import { DemoVideo } from "@/components/landing/demo-video";
 import { ShowcaseCarousel } from "@/components/landing/showcase-carousel";
 import { LandingHeader } from "@/components/landing/landing-header";
 import { LandingFooter } from "@/components/landing/landing-footer";
@@ -134,9 +135,10 @@ export default async function LocaleIndexPage({
           </div>
         </section>
 
-        {/* Product demo video goes here. */}
         <section id="demo" className="px-6 pt-2 pb-8 lg:px-10 lg:pt-4 lg:pb-10">
-          <div className="mx-auto w-full max-w-7xl" />
+          <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-border shadow-[0_24px_80px_-48px_rgba(0,0,0,0.38)]">
+            <DemoVideo src="/landing/demo.mp4" poster="/landing/demo-poster.jpg" />
+          </div>
         </section>
 
         <section className="py-7 lg:py-9">
