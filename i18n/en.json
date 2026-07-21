@@ -62,6 +62,11 @@
       "export": "Export PDF",
       "exportDisabled": "PDF export is available in the full workspace",
       "starterTitle": "AnvilNote Feature Tour"
+    },
+    "download": {
+      "title": "Download AnvilNote",
+      "subtitle": "Free, offline-first desktop app for macOS, Windows, and Linux.",
+      "version": "Version {version}"
     }
   },
   "legal": {

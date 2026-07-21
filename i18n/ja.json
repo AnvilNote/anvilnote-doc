@@ -62,6 +62,11 @@
       "export": "PDFを書き出す",
       "exportDisabled": "PDF 書き出しは正式なワークスペースで利用できます",
       "starterTitle": "AnvilNote 機能ツアー"
+    },
+    "download": {
+      "title": "AnvilNote をダウンロード",
+      "subtitle": "macOS、Windows、Linux に対応した無料のオフラインファーストデスクトップアプリ。",
+      "version": "バージョン {version}"
     }
   },
   "legal": {

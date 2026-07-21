@@ -62,6 +62,11 @@
       "export": "匯出 PDF",
       "exportDisabled": "PDF 匯出可在正式工作區使用",
       "starterTitle": "AnvilNote 功能示範"
+    },
+    "download": {
+      "title": "下載 AnvilNote",
+      "subtitle": "免費、離線優先的桌面應用程式，支援 macOS、Windows、Linux。",
+      "version": "版本 {version}"
     }
   },
   "legal": {

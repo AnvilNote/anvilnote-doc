@@ -62,6 +62,11 @@
       "export": "ส่งออก PDF",
       "exportDisabled": "การส่งออก PDF ใช้ได้ในพื้นที่ทำงานเต็มรูปแบบ",
       "starterTitle": "ทัวร์ฟีเจอร์ AnvilNote"
+    },
+    "download": {
+      "title": "ดาวน์โหลด AnvilNote",
+      "subtitle": "แอปเดสก์ท็อปฟรีที่เน้นการทำงานแบบออฟไลน์ก่อน รองรับ macOS, Windows และ Linux",
+      "version": "เวอร์ชัน {version}"
     }
   },
   "legal": {

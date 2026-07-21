@@ -7,6 +7,8 @@ import { ParallaxLayer } from "@/components/landing/parallax-layer";
 import { ScrollDownLink } from "@/components/landing/scroll-down-link";
 import { DemoVideo } from "@/components/landing/demo-video";
 import { ShowcaseCarousel } from "@/components/landing/showcase-carousel";
+import { DownloadButtons } from "@/components/landing/download-buttons";
+import { getLatestDesktopRelease } from "@/lib/latest-release";
 import { LandingHeader } from "@/components/landing/landing-header";
 import { LandingFooter } from "@/components/landing/landing-footer";
 
@@ -22,6 +24,8 @@ type LandingCopy = {
   secondaryCta: string;
   showcaseTitle: string;
   showcaseDescription: string;
+  downloadTitle: string;
+  downloadSubtitle: string;
   footerRights: string;
   footerPrivacy: string;
   footerTerms: string;
@@ -73,6 +77,7 @@ export default async function LocaleIndexPage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "landing" });
+  const release = await getLatestDesktopRelease();
   const copy: LandingCopy = {
     heroLabel: t("hero.label"),
     heroLine1: t("hero.line1"),
@@ -85,6 +90,8 @@ export default async function LocaleIndexPage({
     secondaryCta: t("hero.secondaryCta"),
     showcaseTitle: t("showcase.title"),
     showcaseDescription: t("showcase.description"),
+    downloadTitle: t("download.title"),
+    downloadSubtitle: t("download.subtitle"),
     footerRights: t("footer.rights", { year: new Date().getFullYear() }),
     footerPrivacy: t("footer.privacy"),
     footerTerms: t("footer.terms"),
@@ -135,7 +142,7 @@ export default async function LocaleIndexPage({
           </div>
         </section>
 
-        <section id="demo" className="px-6 pt-2 pb-8 lg:px-10 lg:pt-4 lg:pb-10">
+        <section id="demo" className="px-6 pt-10 pb-8 lg:px-10 lg:pt-16 lg:pb-10">
           <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-border shadow-[0_24px_80px_-48px_rgba(0,0,0,0.38)]">
             <DemoVideo src="/landing/demo.mp4" poster="/landing/demo-poster.jpg" />
           </div>
@@ -200,6 +207,26 @@ export default async function LocaleIndexPage({
             </div>
 
             <ShowcaseCarousel items={showcaseItemsFor(locale)} />
+          </div>
+        </section>
+
+        <section className="border-b border-border/70">
+          <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-6 px-6 py-16 text-center lg:px-10 lg:py-20">
+            <div className="max-w-xl">
+              <p className="text-3xl leading-tight font-semibold tracking-[-0.04em] text-balance sm:text-4xl">
+                {copy.downloadTitle}
+              </p>
+              <p className="mt-4 text-base leading-8 text-muted-foreground sm:text-lg">
+                {copy.downloadSubtitle}
+              </p>
+            </div>
+
+            <DownloadButtons
+              macOS={release.macOS}
+              windows={release.windows}
+              linux={release.linux}
+              versionLabel={t("download.version", { version: release.version })}
+            />
           </div>
         </section>
 

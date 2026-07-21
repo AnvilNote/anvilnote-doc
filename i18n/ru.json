@@ -62,6 +62,11 @@
       "export": "Экспорт в PDF",
       "exportDisabled": "Экспорт в PDF доступен в полной рабочей среде",
       "starterTitle": "Обзор возможностей AnvilNote"
+    },
+    "download": {
+      "title": "Скачать AnvilNote",
+      "subtitle": "Бесплатное десктопное приложение с приоритетом офлайн-режима для macOS, Windows и Linux.",
+      "version": "Версия {version}"
     }
   },
   "legal": {
