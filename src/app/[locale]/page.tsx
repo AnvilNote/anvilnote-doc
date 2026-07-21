@@ -1,7 +1,9 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { ChevronDown } from "lucide-react";
 import type { AppLocale } from "@/lib/i18n/routing";
+import { languageAlternates, localizedPath } from "@/lib/seo";
 import { HeroParticles } from "@/components/landing/hero-particles";
 import { ParallaxLayer } from "@/components/landing/parallax-layer";
 import { ScrollDownLink } from "@/components/landing/scroll-down-link";
@@ -69,6 +71,20 @@ const techStack = [
   { name: "Radix UI", src: "/tech-logos/radixui.svg", darkSrc: "/tech-logos/radixui-dark.svg", width: 110, height: 20 },
   { name: "Typst", src: "/tech-logos/typst.svg", darkSrc: "/tech-logos/typst-dark.svg", width: 90, height: 22 },
 ];
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: AppLocale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    alternates: {
+      canonical: localizedPath(locale),
+      languages: languageAlternates(),
+    },
+  };
+}
 
 export default async function LocaleIndexPage({
   params,
