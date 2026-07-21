@@ -125,21 +125,34 @@ export default async function LocaleIndexPage({
 
       <main>
         <section className="relative overflow-hidden">
-          <ParallaxLayer speed={0.4}>
-            <HeroParticles />
-          </ParallaxLayer>
+          {/* Particle field is a decorative extra, not worth the canvas/paint
+              cost on small screens — hidden below sm instead of just pausing
+              its animation (hero-particles.tsx already skips motion on
+              mobile, but still mounts the canvas if not hidden here). */}
+          <div className="hidden sm:block">
+            <ParallaxLayer speed={0.4}>
+              <HeroParticles />
+            </ParallaxLayer>
+          </div>
           <div className="relative mx-auto w-full max-w-7xl px-6 py-8 lg:px-10 lg:py-10">
             <div className="px-1 pt-24 pb-16 text-center lg:pt-32 lg:pb-18">
               <div className="mx-auto max-w-6xl text-[3.2rem] leading-[0.93] font-semibold tracking-[-0.08em] sm:text-[4.6rem] lg:text-[6.4rem]">
-                <div>{copy.heroLine1}</div>
+                <div className="text-balance">{copy.heroLine1}</div>
+                {copy.heroLine2Before ? (
+                  <div className="text-balance">{copy.heroLine2Before}</div>
+                ) : null}
+                {/* Highlight always sits alone on its own line — mixing it
+                    with heroLine2Before/After on one flex row let the browser
+                    wrap the surrounding text awkwardly mid-phrase. */}
                 <div>
-                  {copy.heroLine2Before ? <>{copy.heroLine2Before} </> : null}
                   <span className="inline-block bg-foreground px-[0.2em] py-[0.06em] text-background">
                     {copy.heroHighlight}
                   </span>
-                  {copy.heroLine2After ? <> {copy.heroLine2After}</> : null}
                 </div>
-                <div>{copy.heroLine3}</div>
+                {copy.heroLine2After ? (
+                  <div className="text-balance">{copy.heroLine2After}</div>
+                ) : null}
+                <div className="text-balance">{copy.heroLine3}</div>
               </div>
               <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-foreground/76">
                 {copy.heroKicker}
@@ -249,7 +262,7 @@ export default async function LocaleIndexPage({
         <section>
           <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-6 py-16 lg:flex-row lg:items-end lg:justify-between lg:px-10 lg:py-20">
             <div className="max-w-2xl">
-              <p className="text-4xl leading-tight font-semibold tracking-[-0.05em] text-balance sm:text-5xl">
+              <p className="text-4xl leading-tight font-semibold tracking-[-0.05em] text-balance whitespace-pre-line sm:text-5xl">
                 {copy.closingTitle}
               </p>
               <p className="mt-5 max-w-xl text-base leading-8 text-muted-foreground sm:text-lg">

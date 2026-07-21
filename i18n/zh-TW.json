@@ -41,7 +41,7 @@
       "description": "AnvilNote 內建多種範本，適合做講義、報告和整理筆記。\n部分範本來自 Typst 開源社群，已先整合好，打開就能用。"
     },
     "closing": {
-      "title": "寫作、整理、輸出，一次完成。",
+      "title": "寫作、整理、輸出，\n一次完成。",
       "description": "AnvilNote 讓你從草稿一路做到 PDF，不用登入，也不用換工具。",
       "cta": "開始寫作"
     },
