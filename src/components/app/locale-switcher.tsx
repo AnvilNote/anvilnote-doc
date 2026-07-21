@@ -35,7 +35,7 @@ export function LocaleSwitcher() {
           variant="ghost"
           size="sm"
           disabled={isPending}
-          className="gap-1.5"
+          className="gap-1.5 hover:bg-transparent dark:hover:bg-transparent"
           aria-label={t("locale.label")}
         >
           <Languages className="size-4" />

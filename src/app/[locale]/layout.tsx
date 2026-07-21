@@ -48,8 +48,13 @@ export default async function LocaleLayout({
       </head>
       <body className="min-h-full bg-background text-foreground antialiased" suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
-            {children}
+          <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+            {/* Keyed by locale so a language switch (a real route change, since
+                locale is a route segment) remounts this wrapper and replays a
+                fade+rise — distinct from the theme toggle's circle reveal. */}
+            <div key={locale} className="animate-in fade-in slide-in-from-bottom-2 duration-300 ease-out">
+              {children}
+            </div>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

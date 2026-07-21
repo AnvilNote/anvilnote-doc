@@ -41,7 +41,7 @@ Opens at `http://localhost:3000`. Locales: `en`, `zh-TW`, `ja`, `ko`, `th`, `ru`
 - `src/components/landing/` — landing-page-only components (header, footer,
   hero particle canvas, showcase carousel).
 - `src/components/legal/` — the shared legal-page markdown renderer.
-- `messages/{locale}.json` — only the `landing`, `legal`, `locale`, and
+- `i18n/{locale}.json` — only the `landing`, `legal`, `locale`, and
   `settings.appearance.theme` translation keys are needed here.
 - `public/landing/{locale}/{slug}.png` — per-locale template preview
   screenshots shown in the showcase carousel.

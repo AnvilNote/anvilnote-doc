@@ -113,6 +113,26 @@
 }
 
 /* ---------------------------------------------------------------------------
+ * Theme toggle — the color change radiates out from the button as an
+ * expanding circle (View Transitions API, driven from theme-toggle.tsx).
+ * The default cross-fade is disabled so only that circle reveal shows: the
+ * old page stays static underneath while the new one is clipped on top.
+ * ------------------------------------------------------------------------- */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 2;
+}
+
+/* ---------------------------------------------------------------------------
  * Landing marquees — tech-stack strip and template showcase carousel.
  * ------------------------------------------------------------------------- */
 @keyframes landing-marquee {

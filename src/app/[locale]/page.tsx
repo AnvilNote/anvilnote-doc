@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
+import { ChevronDown } from "lucide-react";
 import type { AppLocale } from "@/lib/i18n/routing";
-import { Link } from "@/lib/i18n/navigation";
 import { HeroParticles } from "@/components/landing/hero-particles";
+import { ParallaxLayer } from "@/components/landing/parallax-layer";
+import { ScrollDownLink } from "@/components/landing/scroll-down-link";
 import { ShowcaseCarousel } from "@/components/landing/showcase-carousel";
 import { LandingHeader } from "@/components/landing/landing-header";
 import { LandingFooter } from "@/components/landing/landing-footer";
-import { Button } from "@/components/ui/button";
 
 type LandingCopy = {
   heroLabel: string;
@@ -50,15 +51,18 @@ function showcaseItemsFor(locale: AppLocale) {
   }));
 }
 
+// Simple Icons-style marks are single-color SVGs (fill="#111111") — invisible
+// against a dark background, so each one ships a light-fill "-dark" twin
+// (same convention as the header's favicon-dark/favicon-light swap).
 const techStack = [
-  { name: "Next.js", src: "/tech-logos/nextdotjs.svg", width: 110, height: 22 },
-  { name: "React", src: "/tech-logos/react.svg", width: 92, height: 22 },
-  { name: "Tiptap", src: "/tech-logos/tiptap.png", width: 28, height: 28 },
-  { name: "TypeScript", src: "/tech-logos/typescript.svg", width: 126, height: 24 },
-  { name: "Tailwind CSS", src: "/tech-logos/tailwindcss.svg", width: 142, height: 18 },
-  { name: "shadcn/ui", src: "/tech-logos/shadcnui.svg", width: 112, height: 22 },
-  { name: "Radix UI", src: "/tech-logos/radixui.svg", width: 110, height: 20 },
-  { name: "Typst", src: "/tech-logos/typst.svg", width: 90, height: 22 },
+  { name: "Next.js", src: "/tech-logos/nextdotjs.svg", darkSrc: "/tech-logos/nextdotjs-dark.svg", width: 110, height: 22 },
+  { name: "React", src: "/tech-logos/react.svg", darkSrc: "/tech-logos/react-dark.svg", width: 92, height: 22 },
+  { name: "Tiptap", src: "/tech-logos/tiptap.png", darkSrc: null, width: 28, height: 28 },
+  { name: "TypeScript", src: "/tech-logos/typescript.svg", darkSrc: "/tech-logos/typescript-dark.svg", width: 126, height: 24 },
+  { name: "Tailwind CSS", src: "/tech-logos/tailwindcss.svg", darkSrc: "/tech-logos/tailwindcss-dark.svg", width: 142, height: 18 },
+  { name: "shadcn/ui", src: "/tech-logos/shadcnui.svg", darkSrc: "/tech-logos/shadcnui-dark.svg", width: 112, height: 22 },
+  { name: "Radix UI", src: "/tech-logos/radixui.svg", darkSrc: "/tech-logos/radixui-dark.svg", width: 110, height: 20 },
+  { name: "Typst", src: "/tech-logos/typst.svg", darkSrc: "/tech-logos/typst-dark.svg", width: 90, height: 22 },
 ];
 
 export default async function LocaleIndexPage({
@@ -97,7 +101,9 @@ export default async function LocaleIndexPage({
 
       <main>
         <section className="relative overflow-hidden">
-          <HeroParticles />
+          <ParallaxLayer speed={0.4}>
+            <HeroParticles />
+          </ParallaxLayer>
           <div className="relative mx-auto w-full max-w-7xl px-6 py-8 lg:px-10 lg:py-10">
             <div className="px-1 pt-24 pb-16 text-center lg:pt-32 lg:pb-18">
               <div className="mx-auto max-w-6xl text-[3.2rem] leading-[0.93] font-semibold tracking-[-0.08em] sm:text-[4.6rem] lg:text-[6.4rem]">
@@ -115,10 +121,14 @@ export default async function LocaleIndexPage({
                 {copy.heroKicker}
               </p>
 
-              <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-                <Button asChild variant="outline" size="lg" className="h-11 rounded-full px-6">
-                  <Link href="#demo">{copy.secondaryCta}</Link>
-                </Button>
+              <div className="mt-16 flex items-center justify-center">
+                <ScrollDownLink
+                  targetId="demo"
+                  ariaLabel={copy.secondaryCta}
+                  className="text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <ChevronDown className="size-7" />
+                </ScrollDownLink>
               </div>
             </div>
           </div>
@@ -151,9 +161,19 @@ export default async function LocaleIndexPage({
                           alt={item.name}
                           width={item.width}
                           height={item.height}
-                          className="h-14 w-auto object-contain"
+                          className={`h-14 w-auto object-contain ${item.darkSrc ? "dark:hidden" : ""}`}
                           unoptimized
                         />
+                        {item.darkSrc ? (
+                          <Image
+                            src={item.darkSrc}
+                            alt={item.name}
+                            width={item.width}
+                            height={item.height}
+                            className="hidden h-14 w-auto object-contain dark:block"
+                            unoptimized
+                          />
+                        ) : null}
                       </div>
                       <span className="text-sm font-medium tracking-[-0.02em] text-muted-foreground">
                         {item.name}

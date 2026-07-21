@@ -1,10 +1,10 @@
 import { describe, expect, it } from "vitest";
-import en from "../../../messages/en.json";
-import ja from "../../../messages/ja.json";
-import ko from "../../../messages/ko.json";
-import ru from "../../../messages/ru.json";
-import th from "../../../messages/th.json";
-import zhTW from "../../../messages/zh-TW.json";
+import en from "../../../i18n/en.json";
+import ja from "../../../i18n/ja.json";
+import ko from "../../../i18n/ko.json";
+import ru from "../../../i18n/ru.json";
+import th from "../../../i18n/th.json";
+import zhTW from "../../../i18n/zh-TW.json";
 
 const messages = { en, "zh-TW": zhTW, ja, ko, ru, th };
 
