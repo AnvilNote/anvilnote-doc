@@ -1,7 +1,7 @@
 import { faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Copyright, Mail } from "lucide-react";
-import { Link } from "@/lib/i18n/navigation";
+import { FooterNavLink } from "./footer-nav-link";
 
 const GITHUB_ORG_URL = "https://github.com/AnvilNote";
 
@@ -24,16 +24,12 @@ export function LandingFooter({
             <Copyright className="size-4" />
             {rights}
           </span>
-          <nav aria-label="Legal" className="flex items-center gap-5">
-            <Link href="/feedback" className="hover:text-foreground">
-              {feedback}
-            </Link>
-            <Link href="/privacy" className="hover:text-foreground">
-              {privacy}
-            </Link>
-            <Link href="/terms" className="hover:text-foreground">
-              {terms}
-            </Link>
+          <nav aria-label="Legal" className="flex items-center gap-3">
+            <FooterNavLink href="/feedback">{feedback}</FooterNavLink>
+            <span aria-hidden="true">·</span>
+            <FooterNavLink href="/privacy">{privacy}</FooterNavLink>
+            <span aria-hidden="true">·</span>
+            <FooterNavLink href="/terms">{terms}</FooterNavLink>
           </nav>
         </div>
         <nav aria-label="Contact" className="flex items-center justify-center gap-4 sm:justify-end">

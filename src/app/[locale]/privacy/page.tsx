@@ -33,6 +33,7 @@ export default async function PrivacyPage({
   return (
     <LegalPage
       backHome={t("backHome")}
+      tableOfContentsLabel={t("tableOfContents")}
       footerRights={tFooter("rights", { year: new Date().getFullYear() })}
       footerPrivacy={tFooter("privacy")}
       footerTerms={tFooter("terms")}

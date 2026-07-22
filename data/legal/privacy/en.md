@@ -5,13 +5,17 @@
 
 AnvilNote values your privacy and your right to control your own personal data. This Privacy Policy explains how data relating to your use of AnvilNote is stored, transmitted, processed, and used, and describes the data processing that may be involved when third-party services are used.
 
-AnvilNote is designed on a **local-first** basis. Unless you actively enable a feature that requires a connection to a third-party service, your document content is, in principle, stored only on your own device and is not transmitted to any server operated by the AnvilNote maintainers.
+AnvilNote is designed on a **local-first** basis. **Core editing and document export work on your device. Smart Mode is optional and requires an internet connection and your own OpenAI API key.** Unless you actively enable a feature that requires a connection to a third-party service, your document content is, in principle, stored only on your own device and is not transmitted to any server operated by the AnvilNote maintainers.
 
 By using AnvilNote, you acknowledge that you have read and understood this Policy.
 
-## 1. Scope of application
+## Chapter 1 General provisions
+
+### 1. Scope of application
 
 This Policy applies to the desktop app, the web app, and related program components officially provided by the AnvilNote project maintainers.
+
+**The public AnvilNote website provides product information, legal information, and desktop download information only. It does not provide the document editor, application settings, or Smart Mode.**
 
 This Policy does not apply to the following services or circumstances:
 
@@ -22,7 +26,7 @@ This Policy does not apply to the following services or circumstances:
 
 The third-party services referred to above process data in accordance with their own respective terms of service, privacy policies, and applicable law.
 
-## 2. Storage and management of local data
+### 2. Storage and management of local data
 
 AnvilNote does not require you to register an account, nor does it require you to sign in to any cloud service operated by AnvilNote.
 
@@ -30,10 +34,11 @@ The following data that you create or edit in AnvilNote is, in principle, stored
 
 * Document content;
 * Drafts;
-* Document version history;
+* Document version history and locally stored Smart Mode conversation history;
 * Imported or attached files;
 * User preference settings;
 * Templates, fonts, and other local data necessary to carry out the software's functions;
+* Encrypted local metadata required to manage an AI key profile, where you choose to save one in the desktop app;
 * Other content that you create or retain through AnvilNote.
 
 Depending on which version you use, the data described above may be stored in the desktop app's application data directory, in a file location you specify, or in local storage provided by your web browser.
@@ -42,7 +47,7 @@ Your use of AnvilNote does not cause the AnvilNote project maintainers to automa
 
 You may manage or delete local data using features provided by AnvilNote, your operating system, or your browser. Because the AnvilNote project maintainers do not hold a copy of your local data, they are unable to recover documents that are deleted, corrupted, or lost.
 
-## 3. Collection, processing, and use of personal data
+### 3. Collection, processing, and use of personal data
 
 In normal offline use, AnvilNote does not transmit your documents, drafts, version history, or other content to any server operated by the AnvilNote project maintainers.
 
@@ -57,38 +62,42 @@ AnvilNote also does not proactively collect, process, or use your personal data 
 
 Merely downloading, installing, or running AnvilNote does not cause the AnvilNote project maintainers to obtain the documents or other private data on your device.
 
-## 4. AI Smart Mode
+## Chapter 2 AI Smart Mode
 
-### 4.1 Enabling the feature
+### 4. AI Smart Mode
+
+#### 4.1 Enabling the feature
 
 AI Smart Mode is an optional feature. AnvilNote will transmit specific data to the API provided by OpenAI, based on your actions, only if you have configured your own OpenAI API key and actively use AI Smart Mode.
 
 If you have not configured an API key, or do not use AI Smart Mode, AnvilNote will not transmit your document content on account of this feature.
 
-### 4.2 Data that may be transmitted
+#### 4.2 Data that may be transmitted
 
-When you use AI Smart Mode, AnvilNote may, depending on the feature you select, transmit the following data directly to OpenAI:
+When you use AI Smart Mode, AnvilNote may, depending on the feature you select, transmit the following data to OpenAI through **trusted application components that run locally on your device**:
 
 * The instructions, questions, or prompt text you enter;
 * Document content you have actively selected or specified;
 * Context necessary to complete the operation you have requested;
-* The content of files you actively attach or specify, where the feature supports attachments;
+* Text extracted locally from files you actively attach or specify, where the feature supports attachments;
 * Other data you expressly choose to provide for processing by the AI model.
 
-AnvilNote does not, absent your action or selection, proactively transmit the entirety of the documents on your device to OpenAI.
+**AnvilNote does not, absent your action or selection, proactively transmit the entirety of the documents on your device to OpenAI.** Attaching a file does not by itself give AnvilNote permission to send unrelated documents or files.
 
-### 4.3 API keys
+#### 4.3 API keys
 
 The OpenAI API key you configure is stored only on your own device:
 
-* In the web app, it is, in principle, stored in browser session storage or other local storage;
-* In the desktop app, it is, in principle, retained through the secure storage mechanism provided by the operating system.
+* In a browser-compatible development runtime, it is, in principle, stored in browser session storage or other local storage. The public website does not provide Smart Mode;
+* In the desktop app, AnvilNote encrypts the key with the operating system's secure-storage capability when it is available and keeps only the encrypted local record needed to use the selected key profile. If secure storage is unavailable, AnvilNote does not persist the key and may retain it only for the current session.
 
-When you use AI Smart Mode, your API key is transmitted directly to OpenAI for authentication and to authorize the API request. Your API key is not transmitted to any server operated by the AnvilNote project maintainers, nor is it held in custody by the AnvilNote project maintainers on your behalf.
+When you use AI Smart Mode, the key is used by the local trusted application boundary to authorize the request sent to OpenAI. **Your API key is not transmitted to a server operated by the AnvilNote project maintainers and is not held in custody by the AnvilNote project maintainers on your behalf.** The settings interface displays only a limited, masked identifier for a saved key profile; it does not reveal the full key after it is saved.
 
 You are responsible for safeguarding your API key and for bearing the risks arising from key leakage, unauthorized use, API charges incurred, or access obtained by a third party.
 
-### 4.4 Third-party data processing
+You may remove a saved key profile or deactivate it from the Smart Mode settings. Removing a profile deletes the corresponding encrypted local record; it does not revoke the underlying key at OpenAI. To stop a compromised key from being usable elsewhere, revoke it in your OpenAI account as well.
+
+#### 4.4 Third-party data processing
 
 Data transmitted to OpenAI through AI Smart Mode will be processed by OpenAI in accordance with its then-current terms of service, data processing terms, privacy policy, and related settings.
 
@@ -111,7 +120,13 @@ Unless you have confirmed that you have lawful authority and fully understand th
 * Personal data obtained without the consent of the data subject;
 * Data whose transmission is prohibited by law, contract, or organizational policy.
 
-## 5. Update checks
+#### 4.5 Your control over Smart Mode results
+
+Smart Mode returns a structured draft or a proposed selected-text change for your review. **It does not silently replace your document.** You decide whether to insert, replace, accept, reject, regenerate, or undo an available result. Conversations and drafts kept by the desktop app are local application data and can be deleted from the application or by removing the relevant local application data.
+
+## Chapter 3 Data management and external services
+
+### 5. Update checks
 
 The AnvilNote desktop app may connect to GitHub's public Releases API to check whether a newer version is available for download.
 
@@ -128,7 +143,7 @@ However, any network connection may allow the third-party service receiving the 
 
 This data is processed by GitHub in accordance with its own privacy policy and terms of service. The AnvilNote project maintainers do not obtain or retain your document content through the update check.
 
-## 6. Analytics, advertising, and tracking technologies
+### 6. Analytics, advertising, and tracking technologies
 
 AnvilNote does not build in any of the following:
 
@@ -143,7 +158,7 @@ AnvilNote does not sell, rent, exchange, or otherwise provide your document cont
 
 If error reporting, usage statistics, or other telemetry features are added in the future, AnvilNote will update this Policy before enabling them and will provide appropriate notice and choice mechanisms suited to the nature of the feature.
 
-## 7. Third-party platforms and external links
+### 7. Third-party platforms and external links
 
 AnvilNote may provide links to GitHub, OpenAI, Typst, or other third-party websites and services.
 
@@ -151,7 +166,7 @@ Once you click an external link or use a third-party service, the resulting data
 
 When you submit an Issue, Discussion, Pull Request, or other public content through GitHub, your GitHub account name, comments, attachments, and other data you provide may be displayed publicly in accordance with GitHub's platform settings. Please do not disclose API keys, personal data, confidential documents, or other content unsuitable for public disclosure in a public Issue or Discussion.
 
-## 8. Data security
+### 8. Data security
 
 AnvilNote adopts a local-first design to reduce the risk of data breaches that can arise from documents being centrally stored on a remote server. However, local storage does not mean your data is absolutely secure.
 
@@ -178,7 +193,7 @@ We recommend that you take appropriate security measures, including:
 * Periodically reviewing and revoking API keys that are no longer in use;
 * Avoiding processing confidential documents on public devices or devices controlled by others.
 
-## 9. Data retention and deletion
+### 9. Data retention and deletion
 
 The AnvilNote project maintainers do not, in principle, retain your local documents, and are therefore unable to determine the retention period for such data.
 
@@ -188,7 +203,7 @@ Whether simply uninstalling AnvilNote also deletes your documents or related set
 
 The retention period and deletion method for data retained by a third-party service are governed by that third-party service's own privacy policy and account settings.
 
-## 10. Personal data rights
+### 10. Personal data rights
 
 Because the AnvilNote project maintainers do not, in principle, hold your local documents or related personal data, they are generally unable to access, correct, restrict the use of, or delete such data on your behalf.
 
@@ -204,7 +219,9 @@ If you believe the AnvilNote project maintainers hold your personal data as a re
 
 The exercise of the foregoing rights remains subject to identity verification, statutory retention obligations, prevention of abuse of rights, and other limitations under applicable law.
 
-## 11. Children and minors
+## Chapter 4 Miscellaneous
+
+### 11. Children and minors
 
 AnvilNote is not designed for the purpose of collecting personal data from children or minors.
 
@@ -212,7 +229,7 @@ Because AnvilNote does not require account registration and documents are, in pr
 
 Minors using AI Smart Mode, the OpenAI API, or other third-party services should confirm that such use complies with the applicable age requirements of those services and, where necessary, obtain the consent of a parent or legal guardian.
 
-## 12. Changes to this policy
+### 12. Changes to this policy
 
 AnvilNote may revise this Policy in response to feature changes, technical changes, changes to third-party services, or legal requirements.
 
@@ -220,11 +237,11 @@ The revised Policy will be published on the AnvilNote official website or projec
 
 Unless otherwise stated, the revised Policy takes effect on the date it is published.
 
-## 13. Contact
+### 13. Contact
 
-If you have any questions about this Policy, about how AnvilNote processes data, or about exercising your personal data rights, you may contact the project maintainers through AnvilNote's GitHub project pages:
+If you have any questions about this Policy, about how AnvilNote processes data, or about exercising your personal data rights, you may contact the project maintainers at [contact@anvilnote.org](mailto:contact@anvilnote.org) or through AnvilNote's GitHub project pages:
 
 * [AnvilNote GitHub organization](https://github.com/AnvilNote)
 * [AnvilNote main project](https://github.com/AnvilNote/anvilnote)
 
-Please do not submit API keys, identification documents, unpublished documents, confidential data, or other sensitive information through a public GitHub Issue, Discussion, or other public channel.
+**Please do not submit API keys, identification documents, unpublished documents, confidential data, or other sensitive information** through a public GitHub Issue, Discussion, or other public channel.

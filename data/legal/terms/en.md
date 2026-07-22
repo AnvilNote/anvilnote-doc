@@ -11,7 +11,9 @@ By downloading, installing, accessing, or using AnvilNote, you acknowledge that 
 
 If you use AnvilNote on behalf of a company, school, agency, organization, or other entity, you represent and warrant that you are authorized to accept these Terms on that entity's behalf; in that case, references to "you" in these Terms also include that entity.
 
-## 1. Definitions
+## Chapter 1 General provisions
+
+### 1. Definitions
 
 Unless otherwise provided in these Terms, the following terms have the meanings set out below:
 
@@ -21,7 +23,7 @@ Unless otherwise provided in these Terms, the following terms have the meanings 
 4. **Third-party services**: products or services that are not operated or controlled by the AnvilNote project maintainers but that may be used in conjunction with AnvilNote, including the OpenAI API, GitHub, operating system services, external fonts, Typst packages, and other third-party software.
 5. **AI Smart Mode**: an optional feature by which a user configures their own API key for a third-party artificial intelligence service and, through AnvilNote, transmits specified content to that service to generate, rewrite, analyze, or otherwise process content.
 
-## 2. Eligibility
+### 2. Eligibility
 
 You must have full legal capacity to enter into contracts on your own under applicable law in order to agree to these Terms yourself.
 
@@ -29,7 +31,7 @@ If you are a person with limited legal capacity or otherwise required by law to 
 
 When you use the OpenAI API or other third-party services, you must also satisfy the minimum age, account eligibility, and other conditions of use imposed by that third-party service.
 
-## 3. License to use the software
+### 3. License to use the software
 
 Provided that you comply with these Terms and the applicable open-source license terms, you may use AnvilNote for lawful personal, educational, research, academic, non-profit, or commercial purposes, including writing, note-taking, document editing, typesetting, and document export.
 
@@ -39,7 +41,7 @@ If these Terms conflict with the open-source license terms applicable to specifi
 
 Except as expressly licensed under the applicable license terms, these Terms do not grant you any right to use AnvilNote's trademarks, name, logo, domain names, visual identity, or other brand elements.
 
-## 4. Official versions and derivative versions
+### 4. Official versions and derivative versions
 
 AnvilNote is an open-source project. You may modify, reproduce, or distribute derivative versions in accordance with the applicable open-source license terms.
 
@@ -52,7 +54,7 @@ However, unless you have obtained the prior written consent of the project maint
 
 Versions modified, repackaged, or distributed by third parties are not official versions of AnvilNote, and the distributor of such a version is solely responsible for its functionality, security, compatibility, and data handling practices.
 
-## 5. User content
+### 5. User content
 
 You retain the copyright and other lawful rights you originally held in your user content. Except as necessary to carry out the local functions you have specified, AnvilNote does not acquire ownership of your user content merely because you use the software.
 
@@ -68,7 +70,7 @@ You represent and warrant that:
 
 The project maintainers do not review user content in advance, and providing editing, typesetting, or conversion features does not make the project maintainers a co-author, publisher, or content provider with respect to your user content.
 
-## 6. User responsibilities
+### 6. User responsibilities
 
 You are solely responsible for the following matters:
 
@@ -83,7 +85,7 @@ You are solely responsible for the following matters:
 
 AnvilNote is not a document custody, cloud backup, file hosting, or permanent storage service. You should establish your own independent and appropriate backups for important data.
 
-## 7. Prohibited conduct
+### 7. Prohibited conduct
 
 You may not use AnvilNote to engage in any of the following:
 
@@ -100,9 +102,11 @@ You may not use AnvilNote to engage in any of the following:
 
 This section shall not be construed to restrict any viewing, study, modification, reproduction, or distribution expressly permitted under the applicable open-source license terms.
 
-## 8. AI Smart Mode
+## Chapter 2 AI Smart Mode
 
-### 8.1 Bring your own API key
+### 8. AI Smart Mode
+
+#### 8.1 Bring your own API key
 
 AI Smart Mode calls the services provided by OpenAI directly, using an OpenAI API key that you obtain and configure yourself.
 
@@ -110,7 +114,7 @@ The project maintainers are not OpenAI's agent, distributor, trustee, co-service
 
 The contracts and policies applicable to your use of the OpenAI API are established separately by OpenAI; OpenAI currently also addresses API usage within its service agreement and related policies.
 
-### 8.2 Costs
+#### 8.2 Costs
 
 AI Smart Mode may give rise to API usage fees, taxes, exchange-rate differences, or other costs. All such costs are charged to you by OpenAI or the relevant third party according to its own pricing, and you are solely responsible for them.
 
@@ -118,7 +122,7 @@ AnvilNote does not control the pricing, quotas, payment methods, refund policies
 
 You are responsible for configuring and managing your own API usage quotas, budget limits, payment methods, and billing notifications in order to avoid unexpected costs.
 
-### 8.3 Data transmission
+#### 8.3 Data transmission
 
 When you actively use AI Smart Mode, the instructions you enter, the document content you actively select, any files you specify, and the context necessary to complete your request may be transmitted directly to OpenAI.
 
@@ -126,7 +130,7 @@ The project maintainers do not operate a separate proxy server for AI Smart Mode
 
 Before transmitting data, you should confirm that you have the lawful authority and legal basis to provide such data to OpenAI.
 
-### 8.4 AI output
+#### 8.4 AI output
 
 Content generated by artificial intelligence may contain errors, omissions, false information, outdated information, bias, fabricated citations, incorrect code, or unsuitable recommendations.
 
@@ -134,7 +138,7 @@ You must not treat AI output as necessarily correct, complete, or fit for any pa
 
 AI output does not constitute legal, medical, financial, investment, tax, accounting, engineering, or other professional advice. Where important interests or high-risk decisions are involved, you should consult a professional with appropriate qualifications.
 
-### 8.5 Sensitive and restricted data
+#### 8.5 Sensitive and restricted data
 
 Unless you have confirmed that you have lawful authority, appropriate safeguards, and compliance with the applicable third-party service's rules, you should not transmit any of the following to AI Smart Mode:
 
@@ -146,7 +150,9 @@ Unless you have confirmed that you have lawful authority, appropriate safeguards
 6. Data whose external transmission is prohibited by law, contract, or school or organizational policy;
 7. Personal data obtained without the consent of the data subject or lacking another lawful basis.
 
-## 9. Third-party services and external resources
+## Chapter 3 Software operation and external services
+
+### 9. Third-party services and external resources
 
 AnvilNote may be used together with, or may link to, third-party services, open-source components, fonts, packages, websites, or other external resources.
 
@@ -162,7 +168,7 @@ The project maintainers do not warrant that:
 
 The suspension, modification, or malfunction of a third-party service may cause some AnvilNote features to become unavailable. The project maintainers may modify, restrict, replace, or remove related features in response to changes in third-party services.
 
-## 10. Document export and format compatibility
+### 10. Document export and format compatibility
 
 AnvilNote may provide import, export, and conversion features for PDF, DOCX, Markdown, image, and other document formats.
 
@@ -177,7 +183,7 @@ Because fonts, layout engines, operating systems, document readers, versions of 
 
 Before formally publishing, submitting, printing, publishing, or delivering a document, you should independently check the exported content, page numbers, fonts, formulas, charts, citations, footnotes, and layout.
 
-## 11. Preview and experimental features
+### 11. Preview and experimental features
 
 Some features may be labeled Alpha, Beta, Preview, Experimental, "experimental feature," "under development," or by another term with a similar meaning.
 
@@ -191,7 +197,7 @@ Such features may:
 
 You should not rely on experimental features as an important, sole, or irreplaceable part of your workflow, and should back up related data before using them.
 
-## 12. Updates, modifications, and discontinuation
+### 12. Updates, modifications, and discontinuation
 
 The project maintainers may, at any time and for reasons such as feature development, security patching, technical limitations, legal requirements, changes to third-party services, or other reasonable grounds, modify, update, suspend, or terminate all or part of AnvilNote's functionality.
 
@@ -201,7 +207,7 @@ Even if the desktop app stops receiving updates, it may, in principle, continue 
 
 To maintain information security and document compatibility, we recommend using the latest stable version obtained through official channels.
 
-## 13. Intellectual property
+### 13. Intellectual property
 
 Except for user content and third-party rights that apply as a matter of law, the copyright, trademark rights, and other intellectual property rights in AnvilNote's official website, documentation, graphical interface, name, logo, design elements, and other content belong to the project maintainers or the original rights holders.
 
@@ -209,7 +215,7 @@ Rights of use with respect to open-source portions are governed by their respect
 
 Third-party packages, fonts, icons, templates, and other components used by AnvilNote may each be subject to different license terms. The applicable licensing information and attributions are as set out in the in-app "About" page, license documentation, or the source code repositories.
 
-## 14. Feedback and contributions
+### 14. Feedback and contributions
 
 If you provide general feedback, suggestions, bug reports, or feature ideas to AnvilNote, you agree that the project maintainers may use, analyze, and incorporate such feedback free of charge for purposes of project development, improvement, maintenance, and promotion, except to the extent you expressly designate the feedback as confidential and the project maintainers agree to keep it confidential.
 
@@ -217,7 +223,9 @@ If you submit code, documentation, templates, translations, or other copyrightab
 
 You must ensure that any content you submit is your own original work, or that you have obtained lawful rights sufficient to submit and license it.
 
-## 15. No warranty
+## Chapter 4 Liability and legal provisions
+
+### 15. No warranty
 
 To the maximum extent permitted by applicable law, AnvilNote and its related features are provided on an "as is" and "as available" basis.
 
@@ -235,7 +243,7 @@ The project maintainers and contributors make no warranty, express, implied, or 
 
 The foregoing does not affect any consumer rights that may not be waived or limited in advance under applicable law. Under Taiwan's consumer protection regime, a "consumer" means a person who engages in a transaction, uses goods, or receives services for consumption purposes; the applicable mandatory protections may still apply depending on the specific transactional relationship.
 
-## 16. Limitation of liability
+### 16. Limitation of liability
 
 To the maximum extent permitted by applicable law, the project maintainers, contributors, and other relevant rights holders shall not be liable for the following damages arising from downloading, installing, using, being unable to use, or relying on AnvilNote:
 
@@ -254,7 +262,7 @@ If applicable law does not permit the exclusion of liability in its entirety, th
 
 Nothing in these Terms excludes or limits liability arising from intent or gross negligence, or any liability that may not be excluded or limited in advance under applicable law.
 
-## 17. Liability for damages
+### 17. Liability for damages
 
 If you cause loss to the project maintainers, a contributor, or a third party by reason of any of the following, you shall bear the corresponding liability for damages under applicable law:
 
@@ -267,7 +275,7 @@ If you cause loss to the project maintainers, a contributor, or a third party by
 
 If you are a consumer protected by applicable consumer protection law, this section shall not be applied in a manner that diminishes any mandatory right you enjoy under law or that imposes on you a liability you would not otherwise bear under law.
 
-## 18. Discontinuation of use and termination
+### 18. Discontinuation of use and termination
 
 You may stop using and uninstall AnvilNote at any time.
 
@@ -277,13 +285,13 @@ However, if you use AnvilNote's official website, download service, Issues, Disc
 
 Upon termination of these Terms, any provision that by its nature should survive—including provisions concerning intellectual property, limitation of liability, governing law, and dispute resolution—shall remain in effect.
 
-## 19. Privacy
+### 19. Privacy
 
 AnvilNote's storage, transmission, and processing of user data is otherwise governed by the Privacy Policy.
 
 These Terms and the Privacy Policy should be read together. If the two differ with respect to the processing of personal data, the Privacy Policy shall govern, except where applicable law otherwise mandatorily requires.
 
-## 20. Changes to these Terms
+### 20. Changes to these Terms
 
 The project maintainers may revise these Terms in response to feature changes, technical changes, legal requirements, information security considerations, or changes to third-party services.
 
@@ -293,17 +301,17 @@ If a revision materially affects users' rights and interests, the project mainta
 
 If you continue to use AnvilNote after a revision, you are deemed to agree to be bound by the revised Terms. If you do not agree to the revised content, you should stop using AnvilNote.
 
-## 21. Severability
+### 21. Severability
 
 If any provision of these Terms is held invalid, unlawful, or unenforceable by a court or competent authority of relevant jurisdiction, that provision shall be limited, adjusted, or excluded to the extent necessary, and the remaining provisions shall remain in full force and effect.
 
-## 22. No waiver
+### 22. No waiver
 
 The project maintainers' failure to promptly exercise or enforce any right under these Terms shall not constitute a waiver of that right.
 
 No single waiver of a right shall be construed as a general waiver of the same or any other breach in the future.
 
-## 23. Governing law and jurisdiction
+### 23. Governing law and jurisdiction
 
 The formation, validity, interpretation, and performance of these Terms shall, in principle, be governed by the laws of the Republic of China (Taiwan), except where the mandatory provisions of another country or jurisdiction apply as a matter of law.
 
@@ -313,13 +321,13 @@ If negotiation fails, and except as otherwise mandatorily required by applicable
 
 This agreement as to jurisdiction does not exclude a consumer's right to bring an action in the court of their domicile, residence, or another court having jurisdiction under applicable law.
 
-## 24. Entire agreement
+### 24. Entire agreement
 
 These Terms, the Privacy Policy, the license documentation of each code repository, and any other rules expressly incorporated on a feature page, together constitute the entire agreement between you and the project maintainers regarding your use of AnvilNote.
 
 Where the applicable open-source license terms, third-party terms of service, or applicable law provide otherwise, those terms shall govern within their respective scope.
 
-## 25. Contact
+### 25. Contact
 
 If you have any questions about these Terms, about how AnvilNote is used, or about related rights and obligations, you may contact the project maintainers through the following channels:
 

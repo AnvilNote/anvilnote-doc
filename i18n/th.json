@@ -178,7 +178,8 @@
     }
   },
   "legal": {
-    "backHome": "กลับหน้าแรก"
+    "backHome": "กลับหน้าแรก",
+    "tableOfContents": "เนื้อหาในหน้านี้"
   },
   "locale": {
     "label": "ภาษา",

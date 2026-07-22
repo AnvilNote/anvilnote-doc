@@ -178,7 +178,8 @@
     }
   },
   "legal": {
-    "backHome": "홈으로 돌아가기"
+    "backHome": "홈으로 돌아가기",
+    "tableOfContents": "이 페이지의 내용"
   },
   "locale": {
     "label": "언어",

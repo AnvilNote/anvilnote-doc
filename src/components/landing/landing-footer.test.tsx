@@ -25,6 +25,15 @@ describe("LandingFooter", () => {
     expect(legalGroup).toContainElement(screen.getByRole("link", { name: "Feedback" }));
     expect(legalGroup).toContainElement(screen.getByRole("link", { name: "Privacy Policy" }));
     expect(legalGroup).toContainElement(screen.getByRole("link", { name: "Terms of Service" }));
+    expect(legalGroup.querySelectorAll('[aria-hidden="true"]')).toHaveLength(2);
+    expect(screen.getByRole("link", { name: "Privacy Policy" })).toHaveClass(
+      "before:origin-left",
+      "before:bg-foreground",
+      "before:duration-300",
+      "hover:before:scale-x-100",
+      "hover:text-background",
+      "motion-reduce:before:transition-none",
+    );
     expect(screen.getByRole("link", { name: "GitHub" })).toHaveAttribute(
       "href",
       "https://github.com/AnvilNote",

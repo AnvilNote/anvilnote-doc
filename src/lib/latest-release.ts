@@ -16,13 +16,13 @@ type GitHubRelease = { tag_name: string; assets: GitHubAsset[] };
 
 export type LatestDesktopRelease = {
   version: string;
-  macOS: string;
-  windows: string;
-  linux: string;
+  macOS: string | null;
+  windows: string | null;
+  linux: string | null;
 };
 
 function findAsset(assets: GitHubAsset[], matches: (name: string) => boolean) {
-  return assets.find((asset) => matches(asset.name))?.browser_download_url;
+  return assets.find((asset) => matches(asset.name))?.browser_download_url ?? null;
 }
 
 export async function getLatestDesktopRelease(): Promise<LatestDesktopRelease> {
@@ -39,8 +39,6 @@ export async function getLatestDesktopRelease(): Promise<LatestDesktopRelease> {
     const macOS = findAsset(release.assets, (name) => name.endsWith("-arm64.dmg"));
     const windows = findAsset(release.assets, (name) => name.endsWith(".exe"));
     const linux = findAsset(release.assets, (name) => name.endsWith("_amd64.deb"));
-    if (!macOS || !windows || !linux) throw new Error("Latest release is missing an expected asset");
-
     return { version: release.tag_name.replace(/^v/, ""), macOS, windows, linux };
   } catch {
     return { version: FALLBACK_VERSION, ...FALLBACK_ASSETS };

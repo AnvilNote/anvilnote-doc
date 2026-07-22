@@ -178,7 +178,8 @@
     }
   },
   "legal": {
-    "backHome": "ホームに戻る"
+    "backHome": "ホームに戻る",
+    "tableOfContents": "このページの内容"
   },
   "locale": {
     "label": "言語",

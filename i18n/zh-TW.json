@@ -178,7 +178,8 @@
     }
   },
   "legal": {
-    "backHome": "回到首頁"
+    "backHome": "回到首頁",
+    "tableOfContents": "本頁內容"
   },
   "locale": {
     "label": "語言",

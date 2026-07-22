@@ -178,7 +178,8 @@
     }
   },
   "legal": {
-    "backHome": "На главную"
+    "backHome": "На главную",
+    "tableOfContents": "На этой странице"
   },
   "locale": {
     "label": "Язык",
