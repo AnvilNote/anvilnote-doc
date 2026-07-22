@@ -242,7 +242,7 @@ export function HeroParticles() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute inset-x-0 top-0 h-[42rem] overflow-hidden [mask-image:radial-gradient(120%_80%_at_50%_28%,black,transparent_78%)]"
+      className="pointer-events-none absolute inset-x-0 top-0 h-[46rem] overflow-hidden [mask-image:radial-gradient(120%_80%_at_50%_28%,black,transparent_85%)]"
     >
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
     </div>
