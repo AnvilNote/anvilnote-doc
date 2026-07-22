@@ -6,6 +6,8 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { routing, type AppLocale } from "@/lib/i18n/routing";
 import { ThemeProvider } from "@/components/app/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
+import { QuillTransition } from "@/components/landing/quill-transition";
 import { SITE_URL, ogLocaleFor, otherOgLocales } from "@/lib/seo";
 import "../globals.css";
 
@@ -82,6 +84,8 @@ export default async function LocaleLayout({
             <div key={locale} className="animate-in fade-in slide-in-from-bottom-2 duration-300 ease-out">
               {children}
             </div>
+            <Toaster position="top-center" richColors />
+            <QuillTransition />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
