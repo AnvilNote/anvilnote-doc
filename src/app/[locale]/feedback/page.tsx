@@ -16,7 +16,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "feedback" });
   return {
-    title: t("title"),
+    title: t("boardTitle"),
     alternates: {
       canonical: localizedPath(locale, "/feedback"),
       languages: languageAlternates("/feedback"),

@@ -26,7 +26,7 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL(SITE_URL),
-    title: { default: "AnvilNote", template: "%s | AnvilNote" },
+    title: { default: "AnvilNote", template: "AnvilNote | %s" },
     description,
     icons: { icon: "/favicon-light.svg" },
     openGraph: {
