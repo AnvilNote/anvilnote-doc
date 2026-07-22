@@ -36,6 +36,7 @@ export default async function PrivacyPage({
       footerRights={tFooter("rights", { year: new Date().getFullYear() })}
       footerPrivacy={tFooter("privacy")}
       footerTerms={tFooter("terms")}
+      footerFeedback={tFooter("feedback")}
       markdown={readLegalDoc("privacy", locale)}
     />
   );

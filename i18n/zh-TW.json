@@ -48,7 +48,8 @@
     "footer": {
       "rights": "{year} AnvilNote．保留所有權利。",
       "privacy": "隱私權政策",
-      "terms": "使用者條款"
+      "terms": "使用者條款",
+      "feedback": "意見回饋"
     },
     "demo": {
       "search": "搜尋",
@@ -67,6 +68,113 @@
       "title": "下載 AnvilNote",
       "subtitle": "免費、離線優先的桌面應用程式，支援 macOS、Windows、Linux。",
       "version": "版本 {version}"
+    }
+  },
+  "feedback": {
+    "title": "留下你的意見",
+    "description": "發現 bug，或對 AnvilNote 有什麼想法嗎？我們會讀完每一則訊息！",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "nameLabel": "姓名／暱稱（選填）",
+    "namePlaceholder": "不填則顯示為「匿名回饋者」",
+    "titleLabel": "標題",
+    "titlePlaceholder": "簡短描述（至多 15 字）",
+    "categoryLabel": "這是關於？",
+    "category": {
+      "bug": "錯誤回報",
+      "feature": "功能建議",
+      "general": "一般回饋",
+      "other": "其他"
+    },
+    "messageLabel": "你的訊息",
+    "messagePlaceholder": "想說些什麼呢？",
+    "toolbar": {
+      "heading1": "標題1",
+      "heading2": "標題2",
+      "heading3": "標題3",
+      "bold": "粗體",
+      "italic": "斜體",
+      "strikethrough": "刪除線",
+      "link": "超連結",
+      "bulletList": "無序列點",
+      "orderedList": "有序列點",
+      "image": "插入圖片",
+      "modeEdit": "編輯",
+      "modeSplit": "並排預覽",
+      "modePreview": "預覽",
+      "previewEmpty": "尚無內容可預覽。"
+    },
+    "imageHint": "最多可上傳{max}張圖片，每張5MB以內。",
+    "uploading": "上傳中…",
+    "imageTooLarge": "圖片大小需在5MB以內。",
+    "tooManyImages": "每次最多只能附加5張圖片。",
+    "uploadError": "圖片上傳失敗，請再試一次。",
+    "cropTitle": "裁切圖片",
+    "cropZoom": "縮放",
+    "cropApply": "插入圖片",
+    "cropCancel": "取消",
+    "submit": "送出回饋",
+    "submitting": "傳送中…",
+    "successTitle": "謝謝你！",
+    "successMessage": "我們已經收到你的回饋，也寄了一封確認信到你的信箱。",
+    "errorGeneric": "發生了一點問題，請稍後再試一次。",
+    "errorRateLimited": "你已經送出幾則訊息了，請稍等一下再送出下一則。",
+    "status": {
+      "published": "已發布",
+      "in_progress": "修改中",
+      "rejected": "已拒絕",
+      "done": "已完成"
+    },
+    "anonymous": "匿名回饋者",
+    "rejectionReason": "拒絕原因",
+    "boardTitle": "意見回饋",
+    "boardDescription": "瀏覽社群的意見回饋，或分享你的想法。",
+    "newFeedback": "新增意見回饋",
+    "table": {
+      "id": "編號",
+      "title": "標題",
+      "status": "狀態",
+      "category": "類型"
+    },
+    "filterAll": "全部",
+    "boardEmpty": "目前還沒有任何意見回饋，成為第一個分享的人吧。",
+    "rowsPerPage": "每頁筆數",
+    "email": {
+      "subject": "感謝你的回饋 — AnvilNote",
+      "heading": "感謝你的回饋！",
+      "greeting": "嗨，",
+      "introNamed": "謝謝{name}花時間填寫AnvilNote的意見回饋，我們已經收到你的訊息：",
+      "introAnonymous": "感謝您的回饋，我們已經收到你的訊息：",
+      "categoryLabel": "類別",
+      "viewLink": "查看完整意見",
+      "closing": "我們會仔細閱讀每一則回饋，謝謝你的支持。",
+      "signature": "— AnvilNote 團隊",
+      "doNotReply": "這是系統自動發送的信件，請勿直接回覆。",
+      "contactUs": "有事想找我們嗎？可以透過以下管道聯絡",
+      "reasonLabel": "原因",
+      "status": {
+        "in_progress": {
+          "subject": "您的意見回饋處理中 — AnvilNote",
+          "heading": "我們開始處理囉！",
+          "introNamed": "謝謝你，{name}，我們已經開始處理你的意見回饋：",
+          "introAnonymous": "我們已經開始處理這則意見回饋：",
+          "closing": "處理完成後我們會再寄信通知你。"
+        },
+        "rejected": {
+          "subject": "關於您的意見回饋 — AnvilNote",
+          "heading": "關於您的意見回饋",
+          "introNamed": "{name} 您好，經過審核，我們暫不會採納以下意見回饋：",
+          "introAnonymous": "經過審核，我們暫不會採納以下意見回饋：",
+          "closing": "還是很謝謝你花時間分享想法。"
+        },
+        "done": {
+          "subject": "您的意見回饋已完成 — AnvilNote",
+          "heading": "處理完成！",
+          "introNamed": "{name}，好消息，你的意見回饋已經處理完成：",
+          "introAnonymous": "好消息，這則意見回饋已經處理完成：",
+          "closing": "謝謝你讓 AnvilNote 變得更好。"
+        }
+      }
     }
   },
   "legal": {

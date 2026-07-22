@@ -9,10 +9,12 @@ export function LandingFooter({
   rights,
   privacy,
   terms,
+  feedback,
 }: {
   rights: string;
   privacy: string;
   terms: string;
+  feedback: string;
 }) {
   return (
     <footer>
@@ -23,6 +25,9 @@ export function LandingFooter({
             {rights}
           </span>
           <nav aria-label="Legal" className="flex items-center gap-5">
+            <Link href="/feedback" className="hover:text-foreground">
+              {feedback}
+            </Link>
             <Link href="/privacy" className="hover:text-foreground">
               {privacy}
             </Link>

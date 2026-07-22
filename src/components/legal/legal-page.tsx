@@ -9,12 +9,14 @@ export function LegalPage({
   footerRights,
   footerPrivacy,
   footerTerms,
+  footerFeedback,
   markdown,
 }: {
   backHome: string;
   footerRights: string;
   footerPrivacy: string;
   footerTerms: string;
+  footerFeedback: string;
   markdown: string;
 }) {
   return (
@@ -68,6 +70,7 @@ export function LegalPage({
         rights={footerRights}
         privacy={footerPrivacy}
         terms={footerTerms}
+        feedback={footerFeedback}
       />
     </div>
   );

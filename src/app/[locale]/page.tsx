@@ -31,6 +31,7 @@ type LandingCopy = {
   footerRights: string;
   footerPrivacy: string;
   footerTerms: string;
+  footerFeedback: string;
   closingTitle: string;
   closingDescription: string;
   closingCta: string;
@@ -111,6 +112,7 @@ export default async function LocaleIndexPage({
     footerRights: t("footer.rights", { year: new Date().getFullYear() }),
     footerPrivacy: t("footer.privacy"),
     footerTerms: t("footer.terms"),
+    footerFeedback: t("footer.feedback"),
     closingTitle: t("closing.title"),
     closingDescription: t("closing.description"),
     closingCta: t("closing.cta"),
@@ -277,6 +279,7 @@ export default async function LocaleIndexPage({
         rights={copy.footerRights}
         privacy={copy.footerPrivacy}
         terms={copy.footerTerms}
+        feedback={copy.footerFeedback}
       />
     </div>
   );

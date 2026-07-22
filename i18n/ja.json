@@ -48,7 +48,8 @@
     "footer": {
       "rights": "{year} AnvilNote. 無断転載を禁じます。",
       "privacy": "プライバシーポリシー",
-      "terms": "利用規約"
+      "terms": "利用規約",
+      "feedback": "フィードバック"
     },
     "demo": {
       "search": "検索",
@@ -67,6 +68,113 @@
       "title": "AnvilNote をダウンロード",
       "subtitle": "macOS、Windows、Linux に対応した無料のオフラインファーストデスクトップアプリ。",
       "version": "バージョン {version}"
+    }
+  },
+  "feedback": {
+    "title": "フィードバックを送る",
+    "description": "バグを見つけた、またはAnvilNoteへのご意見がありますか？いただいたメッセージはすべて読んでいます。",
+    "emailLabel": "メールアドレス",
+    "emailPlaceholder": "you@example.com",
+    "nameLabel": "お名前・ニックネーム（任意）",
+    "namePlaceholder": "未入力の場合は「匿名希望」と表示されます",
+    "titleLabel": "タイトル",
+    "titlePlaceholder": "簡単な概要（15文字以内）",
+    "categoryLabel": "内容の種類",
+    "category": {
+      "bug": "不具合報告",
+      "feature": "機能のご要望",
+      "general": "一般的なご意見",
+      "other": "その他"
+    },
+    "messageLabel": "メッセージ",
+    "messagePlaceholder": "どんなことでもお聞かせください",
+    "toolbar": {
+      "heading1": "見出し1",
+      "heading2": "見出し2",
+      "heading3": "見出し3",
+      "bold": "太字",
+      "italic": "斜体",
+      "strikethrough": "取り消し線",
+      "link": "リンク",
+      "bulletList": "箇条書き",
+      "orderedList": "番号付きリスト",
+      "image": "画像を挿入",
+      "modeEdit": "編集",
+      "modeSplit": "分割表示",
+      "modePreview": "プレビュー",
+      "previewEmpty": "プレビューする内容がありません。"
+    },
+    "imageHint": "画像は最大{max}枚、1枚あたり5MBまで添付できます。",
+    "uploading": "アップロード中…",
+    "imageTooLarge": "画像は5MB以内にしてください。",
+    "tooManyImages": "1回の送信につき画像は最大5枚までです。",
+    "uploadError": "画像のアップロードに失敗しました。もう一度お試しください。",
+    "cropTitle": "画像を切り抜く",
+    "cropZoom": "ズーム",
+    "cropApply": "画像を挿入",
+    "cropCancel": "キャンセル",
+    "submit": "送信する",
+    "submitting": "送信中…",
+    "successTitle": "ありがとうございます！",
+    "successMessage": "フィードバックを受け取りました。確認メールをお送りしました。",
+    "errorGeneric": "問題が発生しました。しばらくしてからもう一度お試しください。",
+    "errorRateLimited": "すでにいくつかメッセージを送信済みです。少し時間を置いてから再度お試しください。",
+    "status": {
+      "published": "公開済み",
+      "in_progress": "対応中",
+      "rejected": "却下",
+      "done": "完了"
+    },
+    "anonymous": "匿名希望",
+    "rejectionReason": "却下理由",
+    "boardTitle": "フィードバック",
+    "boardDescription": "みんなのフィードバックを見る、またはあなたの意見を共有しましょう。",
+    "newFeedback": "新規フィードバック",
+    "table": {
+      "id": "番号",
+      "title": "タイトル",
+      "status": "状態",
+      "category": "カテゴリー"
+    },
+    "filterAll": "すべて",
+    "boardEmpty": "まだフィードバックはありません。最初の投稿者になりましょう。",
+    "rowsPerPage": "1ページの表示件数",
+    "email": {
+      "subject": "フィードバックありがとうございます — AnvilNote",
+      "heading": "フィードバックありがとうございます！",
+      "greeting": "こんにちは、",
+      "introNamed": "{name}様、AnvilNoteへのフィードバックをお寄せいただきありがとうございます。以下のメッセージを受け取りました：",
+      "introAnonymous": "フィードバックをお寄せいただきありがとうございます。以下のメッセージを受け取りました：",
+      "categoryLabel": "カテゴリ",
+      "viewLink": "フィードバックの全文を見る",
+      "closing": "いただいたご意見はすべて目を通しています。応援ありがとうございます。",
+      "signature": "— AnvilNote チーム",
+      "doNotReply": "このメールは自動送信されています。返信はご遠慮ください。",
+      "contactUs": "ご連絡は以下からお願いします：",
+      "reasonLabel": "理由",
+      "status": {
+        "in_progress": {
+          "subject": "フィードバック対応中のお知らせ — AnvilNote",
+          "heading": "対応を開始しました！",
+          "introNamed": "{name} 様、いただいたフィードバックの対応を開始しました：",
+          "introAnonymous": "いただいたフィードバックの対応を開始しました：",
+          "closing": "完了次第、改めてご連絡いたします。"
+        },
+        "rejected": {
+          "subject": "フィードバックについてのお知らせ — AnvilNote",
+          "heading": "フィードバックについてのお知らせ",
+          "introNamed": "{name} 様、検討の結果、以下のフィードバックは見送らせていただきます：",
+          "introAnonymous": "検討の結果、以下のフィードバックは見送らせていただきます：",
+          "closing": "貴重なご意見をお寄せいただき、ありがとうございました。"
+        },
+        "done": {
+          "subject": "フィードバック対応完了のお知らせ — AnvilNote",
+          "heading": "対応が完了しました！",
+          "introNamed": "{name} 様、いただいたフィードバックへの対応が完了しました：",
+          "introAnonymous": "いただいたフィードバックへの対応が完了しました：",
+          "closing": "AnvilNote をより良くするお手伝いをいただき、ありがとうございました。"
+        }
+      }
     }
   },
   "legal": {

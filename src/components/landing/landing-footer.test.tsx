@@ -14,6 +14,7 @@ describe("LandingFooter", () => {
         rights="Copyright 2026 AnvilNote"
         privacy="Privacy Policy"
         terms="Terms of Service"
+        feedback="Feedback"
       />,
     );
 
@@ -21,6 +22,7 @@ describe("LandingFooter", () => {
     const legalGroup = screen.getByLabelText("Legal");
 
     expect(footer).toContainElement(screen.getByText("Copyright 2026 AnvilNote"));
+    expect(legalGroup).toContainElement(screen.getByRole("link", { name: "Feedback" }));
     expect(legalGroup).toContainElement(screen.getByRole("link", { name: "Privacy Policy" }));
     expect(legalGroup).toContainElement(screen.getByRole("link", { name: "Terms of Service" }));
     expect(screen.getByRole("link", { name: "GitHub" })).toHaveAttribute(
