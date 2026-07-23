@@ -137,8 +137,8 @@ export default async function LocaleIndexPage({
             </ParallaxLayer>
           </div>
           <div className="relative mx-auto w-full max-w-7xl px-6 py-8 lg:px-10 lg:py-10">
-            <div className="px-1 pt-24 pb-16 text-center lg:pt-32 lg:pb-18">
-              <div className="mx-auto max-w-6xl text-[3.2rem] leading-[0.93] font-semibold tracking-[-0.08em] sm:text-[4.6rem] lg:text-[6.4rem]">
+            <div className="px-1 pt-18 pb-16 text-center lg:pt-28 lg:pb-18">
+              <div className="mx-auto flex max-w-6xl flex-col gap-y-3 text-[3.2rem] leading-[0.93] font-semibold tracking-[-0.08em] sm:gap-y-4 sm:text-[4.6rem] lg:gap-y-5 lg:text-[6.4rem]">
                 <div className="text-balance">{copy.heroLine1}</div>
                 {copy.heroLine2Before ? (
                   <div className="text-balance">{copy.heroLine2Before}</div>
@@ -156,11 +156,11 @@ export default async function LocaleIndexPage({
                 ) : null}
                 <div className="text-balance">{copy.heroLine3}</div>
               </div>
-              <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-foreground/76">
+              <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-foreground/76">
                 {copy.heroKicker}
               </p>
 
-              <div className="mt-16 flex items-center justify-center">
+              <div id="hero-chevron" className="mt-8 flex items-center justify-center">
                 <ScrollDownLink
                   targetId="demo"
                   ariaLabel={copy.secondaryCta}
@@ -174,7 +174,7 @@ export default async function LocaleIndexPage({
         </section>
 
         <section id="demo" className="px-6 pt-10 pb-8 lg:px-10 lg:pt-16 lg:pb-10">
-          <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-[2rem] border border-border shadow-[0_24px_80px_-48px_rgba(0,0,0,0.38)]">
+          <div className="mx-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-border shadow-[0_24px_80px_-48px_rgba(0,0,0,0.38)]">
             <DemoVideo src="/landing/demo.mp4" poster="/landing/demo-poster.jpg" />
           </div>
         </section>
