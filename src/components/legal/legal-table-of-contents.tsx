@@ -17,47 +17,68 @@ type LegalNavigationTarget =
   | LegalTableOfContentsSection
   | LegalTableOfContentsClause;
 
-function useActiveLegalChapter(items: LegalTableOfContentsItem[]) {
-  const [activeId, setActiveId] = useState(items[0]?.id ?? "");
+// Finds the last heading (in document order) that has scrolled past the
+// activation threshold — the same "how far down have we read" scan used for
+// chapters, generalized so it can also find the currently-active article
+// (§ N) within whichever chapter is active, for bolding in the sidebar.
+function lastHeadingPast(ids: string[], threshold: number): string {
+  let result = "";
+  for (const id of ids) {
+    const heading = document.getElementById(id);
+    if (heading && heading.getBoundingClientRect().top <= threshold) result = id;
+    else break;
+  }
+  return result;
+}
+
+function useActiveLegalHeadings(items: LegalTableOfContentsItem[]) {
+  const [activeChapterId, setActiveChapterId] = useState(items[0]?.id ?? "");
+  const [activeSectionId, setActiveSectionId] = useState("");
+  const [activeClauseId, setActiveClauseId] = useState("");
 
   useEffect(() => {
-    function updateActiveChapter() {
-      let nextActiveId = "";
+    const chapterIds = items.map((item) => item.id);
+    const sectionIds = items.flatMap((item) => item.sections.map((section) => section.id));
+    const clauseIds = items.flatMap((item) =>
+      item.sections.flatMap((section) => section.clauses.map((clause) => clause.id)),
+    );
 
-      for (const item of items) {
-        const heading = document.getElementById(item.id);
-        if (heading && heading.getBoundingClientRect().top <= 160) nextActiveId = item.id;
-        else break;
-      }
-
-      if (nextActiveId) setActiveId(nextActiveId);
+    function updateActive() {
+      const nextChapterId = lastHeadingPast(chapterIds, 160);
+      if (nextChapterId) setActiveChapterId(nextChapterId);
+      setActiveSectionId(lastHeadingPast(sectionIds, 160));
+      setActiveClauseId(lastHeadingPast(clauseIds, 160));
     }
 
-    updateActiveChapter();
-    window.addEventListener("scroll", updateActiveChapter, { passive: true });
-    window.addEventListener("resize", updateActiveChapter);
+    updateActive();
+    window.addEventListener("scroll", updateActive, { passive: true });
+    window.addEventListener("resize", updateActive);
     return () => {
-      window.removeEventListener("scroll", updateActiveChapter);
-      window.removeEventListener("resize", updateActiveChapter);
+      window.removeEventListener("scroll", updateActive);
+      window.removeEventListener("resize", updateActive);
     };
   }, [items]);
 
-  return [activeId, setActiveId] as const;
+  return { activeChapterId, setActiveChapterId, activeSectionId, activeClauseId } as const;
 }
 
 function LegalTableOfContentsLinks({
   items,
-  activeId,
+  activeChapterId,
+  activeSectionId,
+  activeClauseId,
   onNavigate,
 }: {
   items: LegalTableOfContentsItem[];
-  activeId: string;
+  activeChapterId: string;
+  activeSectionId: string;
+  activeClauseId: string;
   onNavigate: (event: MouseEvent<HTMLAnchorElement>, target: LegalNavigationTarget, chapterId: string) => void;
 }) {
   return (
     <ol className="space-y-1 border-l border-border text-sm">
       {items.map((item) => {
-        const expanded = item.id === activeId;
+        const expanded = item.id === activeChapterId;
         return (
           <li key={item.id}>
             <a
@@ -67,7 +88,7 @@ function LegalTableOfContentsLinks({
               onClick={(event) => onNavigate(event, item, item.id)}
               className={`block border-l -ml-px px-3 py-1.5 leading-5 transition-colors ${
                 expanded
-                  ? "border-foreground text-foreground"
+                  ? "border-foreground font-semibold text-foreground"
                   : "border-transparent text-muted-foreground hover:border-foreground/40 hover:text-foreground"
               }`}
             >
@@ -76,32 +97,44 @@ function LegalTableOfContentsLinks({
 
             {expanded && item.sections.length > 0 ? (
               <ol className="mt-1 space-y-1 border-l border-border/70 pl-3 text-xs text-muted-foreground">
-                {item.sections.map((section) => (
+                {item.sections.map((section) => {
+                  const sectionActive = section.id === activeSectionId;
+                  return (
                   <li key={section.id}>
                     <a
                       href={`#${section.id}`}
+                      aria-current={sectionActive ? "location" : undefined}
                       onClick={(event) => onNavigate(event, section, item.id)}
-                      className="block py-1 leading-5 hover:text-foreground"
+                      className={`block py-1 leading-5 hover:text-foreground ${
+                        sectionActive ? "font-semibold text-foreground" : ""
+                      }`}
                     >
                       {section.title}
                     </a>
                     {section.clauses.length > 0 ? (
                       <ol className="space-y-0.5 border-l border-border/50 pl-3 text-xs text-muted-foreground/80">
-                        {section.clauses.map((clause) => (
-                          <li key={clause.id}>
-                            <a
-                              href={`#${clause.id}`}
-                              onClick={(event) => onNavigate(event, clause, item.id)}
-                              className="block py-0.5 leading-5 hover:text-foreground"
-                            >
-                              {clause.title}
-                            </a>
-                          </li>
-                        ))}
+                        {section.clauses.map((clause) => {
+                          const clauseActive = clause.id === activeClauseId;
+                          return (
+                            <li key={clause.id}>
+                              <a
+                                href={`#${clause.id}`}
+                                aria-current={clauseActive ? "location" : undefined}
+                                onClick={(event) => onNavigate(event, clause, item.id)}
+                                className={`block py-0.5 leading-5 hover:text-foreground ${
+                                  clauseActive ? "font-semibold text-foreground" : ""
+                                }`}
+                              >
+                                {clause.title}
+                              </a>
+                            </li>
+                          );
+                        })}
                       </ol>
                     ) : null}
                   </li>
-                ))}
+                  );
+                })}
               </ol>
             ) : null}
           </li>
@@ -115,7 +148,8 @@ function LegalTableOfContentsLinks({
 // chapter contains the current scroll position, then reveals that chapter's
 // sections and clauses while keeping every other chapter compact.
 export function LegalTableOfContents({ label, items }: LegalTableOfContentsProps) {
-  const [activeId, setActiveId] = useActiveLegalChapter(items);
+  const { activeChapterId, setActiveChapterId, activeSectionId, activeClauseId } =
+    useActiveLegalHeadings(items);
 
   if (items.length === 0) return null;
 
@@ -125,7 +159,7 @@ export function LegalTableOfContents({ label, items }: LegalTableOfContentsProps
     chapterId: string,
   ) {
     event.preventDefault();
-    setActiveId(chapterId);
+    setActiveChapterId(chapterId);
 
     const heading = document.getElementById(target.id);
     if (heading) {
@@ -141,14 +175,26 @@ export function LegalTableOfContents({ label, items }: LegalTableOfContentsProps
       <aside className="hidden xl:block xl:sticky xl:top-28 xl:self-start">
         <nav aria-label={label}>
           <p className="mb-3 text-xs font-medium tracking-[0.08em] text-muted-foreground uppercase">{label}</p>
-          <LegalTableOfContentsLinks items={items} activeId={activeId} onNavigate={navigate} />
+          <LegalTableOfContentsLinks
+            items={items}
+            activeChapterId={activeChapterId}
+            activeSectionId={activeSectionId}
+            activeClauseId={activeClauseId}
+            onNavigate={navigate}
+          />
         </nav>
       </aside>
 
       <details className="mb-8 border-y border-border py-3 xl:hidden">
         <summary className="cursor-pointer text-sm font-medium text-foreground">{label}</summary>
         <nav aria-label={label} className="mt-3">
-          <LegalTableOfContentsLinks items={items} activeId={activeId} onNavigate={navigate} />
+          <LegalTableOfContentsLinks
+            items={items}
+            activeChapterId={activeChapterId}
+            activeSectionId={activeSectionId}
+            activeClauseId={activeClauseId}
+            onNavigate={navigate}
+          />
         </nav>
       </details>
     </>
