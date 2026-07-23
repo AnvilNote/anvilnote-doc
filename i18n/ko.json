@@ -2,10 +2,10 @@
   "landing": {
     "hero": {
       "label": "로컬 우선 글쓰기 워크스페이스",
-      "line1": "로컬에서 쓰고,",
+      "line1": "로컬에서 쓰고",
       "line2Before": "",
       "highlight": "제대로 된",
-      "line2After": " 노트.",
+      "line2After": " 노트",
       "line3": "",
       "kicker": "AnvilNote는 편집·수식·코드·템플릿·내보내기를 한 워크스페이스에 모아 긴 글의 구조에 집중할 수 있게 합니다.",
       "cta": "워크스페이스 열기",
@@ -120,7 +120,7 @@
     "errorGeneric": "문제가 발생했습니다. 잠시 후 다시 시도해 주세요.",
     "errorRateLimited": "이미 몇 번 메시지를 보내셨네요. 잠시 후 다시 시도해 주세요.",
     "status": {
-      "published": "게시됨",
+      "published": "대기 중",
       "in_progress": "처리 중",
       "rejected": "거절됨",
       "done": "완료됨"

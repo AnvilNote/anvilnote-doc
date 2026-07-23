@@ -2,10 +2,10 @@
   "landing": {
     "hero": {
       "label": "本機優先寫作工作區",
-      "line1": "用 AnvilNote，",
+      "line1": "用 AnvilNote",
       "line2Before": "",
       "highlight": "把思路",
-      "line2After": "寫成完整筆記。",
+      "line2After": "寫成完整筆記",
       "line3": "",
       "kicker": "編輯、公式、程式碼、範本與輸出，都在同一個工作區。",
       "cta": "進入工作區",
@@ -120,7 +120,7 @@
     "errorGeneric": "發生了一點問題，請稍後再試一次。",
     "errorRateLimited": "你已經送出幾則訊息了，請稍等一下再送出下一則。",
     "status": {
-      "published": "已發布",
+      "published": "待處理",
       "in_progress": "修改中",
       "rejected": "已拒絕",
       "done": "已完成"

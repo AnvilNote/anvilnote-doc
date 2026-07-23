@@ -2,10 +2,10 @@
   "landing": {
     "hero": {
       "label": "ローカルファースト執筆ワークスペース",
-      "line1": "ローカルで書き、",
-      "line2Before": "本格的な",
+      "line1": "ローカルで書き本格的な",
+      "line2Before": "",
       "highlight": "ノート",
-      "line2After": "を作る。",
+      "line2After": "を作る",
       "line3": "",
       "kicker": "AnvilNote は編集・数式・コード・テンプレート・書き出しを一つのワークスペースにまとめ、長文の構成に集中できます。",
       "cta": "ワークスペースを開く",
@@ -120,7 +120,7 @@
     "errorGeneric": "問題が発生しました。しばらくしてからもう一度お試しください。",
     "errorRateLimited": "すでにいくつかメッセージを送信済みです。少し時間を置いてから再度お試しください。",
     "status": {
-      "published": "公開済み",
+      "published": "未対応",
       "in_progress": "対応中",
       "rejected": "却下",
       "done": "完了"

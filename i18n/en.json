@@ -2,10 +2,10 @@
   "landing": {
     "hero": {
       "label": "Local-first writing workspace",
-      "line1": "Write locally,",
+      "line1": "Write locally",
       "line2Before": "",
       "highlight": "shape",
-      "line2After": " serious notes.",
+      "line2After": " serious notes",
       "line3": "",
       "kicker": "AnvilNote keeps editing, math, code, templates, and export in one workspace so you can focus on structuring long-form writing.",
       "cta": "Open the workspace",
@@ -120,7 +120,7 @@
     "errorGeneric": "Something went wrong. Please try again in a moment.",
     "errorRateLimited": "You've sent a few messages already — please wait a bit before sending another.",
     "status": {
-      "published": "Published",
+      "published": "Pending",
       "in_progress": "In progress",
       "rejected": "Rejected",
       "done": "Done"
