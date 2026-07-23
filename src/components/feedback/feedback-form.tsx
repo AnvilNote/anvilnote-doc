@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, type ChangeEvent, type FormEvent } from "react";
+import { useEffect, useRef, useState, type ChangeEvent, type FormEvent } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { toast } from "sonner";
 import { CheckCircle2, Loader2, Send } from "lucide-react";
@@ -20,6 +20,7 @@ import {
   type FeedbackCategory,
 } from "@/lib/feedback/schema";
 import { MAX_IMAGES, MAX_IMAGE_BYTES } from "@/lib/feedback/image-limits";
+import { readFeedbackDraft, writeFeedbackDraft, clearFeedbackDraft } from "@/lib/feedback/feedback-draft";
 import { insertImage } from "@/lib/feedback/markdown-commands";
 import { applyTextareaValue } from "@/lib/feedback/apply-textarea-value";
 import { MarkdownEditor, type MarkdownEditorMode } from "@/components/feedback/markdown-editor";
@@ -47,6 +48,31 @@ export function FeedbackForm({ onSuccess }: { onSuccess?: () => void }) {
   const [cropSrc, setCropSrc] = useState<string | null>(null);
   const [editorMode, setEditorMode] = useState<MarkdownEditorMode>("split");
   const pendingFileRef = useRef<File | null>(null);
+
+  // One-time restore on mount, not a lazy useState initializer — reading
+  // localStorage during the initial render would mismatch the server-
+  // rendered (always-empty) markup and trigger a hydration error.
+  useEffect(() => {
+    const draft = readFeedbackDraft();
+    if (!draft) return;
+    setEmail(draft.email ?? "");
+    setName(draft.name ?? "");
+    setTitle(draft.title ?? "");
+    setCategory(draft.category ?? "general");
+    setMessage(draft.message ?? "");
+  }, []);
+
+  // Debounced autosave. Skips writing while every field is still at its
+  // untouched default — otherwise this fires once on mount with blank
+  // values (before the restore effect above has applied a real draft) and
+  // clobbers it right back to empty.
+  useEffect(() => {
+    if (!email && !name && !title && !message && category === "general") return;
+    const timer = setTimeout(() => {
+      writeFeedbackDraft({ email, name, title, category, message });
+    }, 400);
+    return () => clearTimeout(timer);
+  }, [email, name, title, category, message]);
 
   function handleImageButtonClick() {
     if (imageCount >= MAX_IMAGES) {
@@ -130,6 +156,7 @@ export function FeedbackForm({ onSuccess }: { onSuccess?: () => void }) {
         return;
       }
       setSubmitted(true);
+      clearFeedbackDraft();
       onSuccess?.();
     } catch {
       toast.error(t("errorGeneric"));
