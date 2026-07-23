@@ -1,5 +1,9 @@
 const RELEASES_API = "https://api.github.com/repos/AnvilNote/anvilnote-desktop/releases/latest";
 
+// Tag for this fetch's cache entry, so a release-publish webhook can force
+// a refetch via revalidateTag() instead of waiting out the 1hr window below.
+export const LATEST_RELEASE_TAG = "latest-release";
+
 // Fallback used if the GitHub API is unreachable or rate-limited at build/
 // request time — better to ship a slightly-stale known-good release than a
 // broken download section.
@@ -30,8 +34,9 @@ export async function getLatestDesktopRelease(): Promise<LatestDesktopRelease> {
     const response = await fetch(RELEASES_API, {
       headers: { Accept: "application/vnd.github+json" },
       // Release cadence is slow — an hour of staleness is a fine trade for
-      // not hammering the GitHub API on every request.
-      next: { revalidate: 3600 },
+      // not hammering the GitHub API on every request. The release-publish
+      // webhook (see api/revalidate) forces an earlier refetch via this tag.
+      next: { revalidate: 3600, tags: [LATEST_RELEASE_TAG] },
     });
     if (!response.ok) throw new Error(`GitHub API responded ${response.status}`);
 
