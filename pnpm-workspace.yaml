@@ -10,3 +10,10 @@ onlyBuiltDependencies:
   - "@parcel/watcher"
   - "@swc/core"
   - esbuild
+
+# Dependabot alerts: next@16.2.9 pins its own internal postcss/sharp below
+# the patched version. Force the whole tree onto the patched versions
+# rather than waiting on an upstream Next release.
+overrides:
+  postcss: ">=8.5.10"
+  sharp: ">=0.35.0"
