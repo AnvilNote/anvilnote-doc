@@ -194,5 +194,9 @@
     "appearance": {
       "theme": "Theme"
     }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "This page could not be found."
   }
 }

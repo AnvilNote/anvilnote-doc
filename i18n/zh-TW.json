@@ -194,5 +194,9 @@
     "appearance": {
       "theme": "主題"
     }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "找無此頁面"
   }
 }

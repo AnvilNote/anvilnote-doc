@@ -194,5 +194,9 @@
     "appearance": {
       "theme": "Тема"
     }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Эта страница не найдена."
   }
 }
