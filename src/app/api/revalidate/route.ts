@@ -11,6 +11,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
 
-  revalidateTag(LATEST_RELEASE_TAG);
+  revalidateTag(LATEST_RELEASE_TAG, "max");
   return NextResponse.json({ revalidated: true, now: Date.now() });
 }
